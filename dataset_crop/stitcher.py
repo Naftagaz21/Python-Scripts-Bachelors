@@ -5,8 +5,8 @@ from PIL import ImageOps as iops
 import natsort
 import numpy as np
 
-img_dir = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/images/"
-img_save_dir = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/stitched/"
+img_dir = "/home/atanas/Documents/Bachelor/DATA-ISAIAH/1QIsaa-data/SET/test-set/source-morphed-3-4-cropped/"
+img_save_dir = "/home/atanas/Documents/Bachelor/Python_scripts/test2/"
 
 def stitch(img_dir, img_save_dir):
     imgs = glob(os.path.join(img_dir, "*.png"))
@@ -25,6 +25,8 @@ def stitch(img_dir, img_save_dir):
         y = y.split("_")
 
         # If new image
+        if int(y[1]) == 5:
+            break
         if int(y[1]) != imgOpen:
             if i > 2:
                 img = img.convert('L')
@@ -87,7 +89,7 @@ def crop(img_source_dir, img_save_dir, imgs_save):
         y = y.crop((0, 0, width, height))
         y.save(imgs_save + "img_" + str(i) + ".png")
 
-#stitch(img_dir, img_save_dir)
-imgs_source = "/home/atanas/Documents/Bachelor/DATA-CROPPED/DATA_PARAM_2_3_2X/test-set/source/"
-imgs_save = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/stitched_cropped/"
-crop(imgs_source, img_save_dir, imgs_save)
+stitch(img_dir, img_save_dir)
+#imgs_source = "/home/atanas/Documents/Bachelor/DATA-CROPPED/DATA_PARAM_2_3_2X/test-set/source/"
+#imgs_save = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/stitched_cropped/"
+#crop(imgs_source, img_save_dir, imgs_save)

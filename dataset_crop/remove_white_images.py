@@ -26,9 +26,9 @@ def rem_white_images(img_list):
                 img = Image.fromarray(img)
                 img.save(k)
 
-rem_white_images(img_list)
-img1 = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/images/img_2_row_512_col_1536_input_label.png"
-img2 = "/home/atanas/Documents/Bachelor/TESTING/MODEL1_0.8_9_EPOCH_200/images/img_2_row_512_col_1536_synthesized_image.png"
+#rem_white_images(img_list)
+img1 = "/home/atanas/Documents/Bachelor/TESTING/isaiah_1_8_no_vgg/images/img_5_row_2560_col_0_input_label.png"
+img2 = "/home/atanas/Documents/Bachelor/TESTING/isaiah_1_8_no_vgg/images/img_5_row_2560_col_0_synthesized_image.png"
 
 img1 = Image.open(img1)
 img1 = np.array(img1)
